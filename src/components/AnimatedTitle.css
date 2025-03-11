@@ -1,0 +1,45 @@
+.name-container {
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  width: 100%;
+}
+
+.main-title {
+  font-size: 6rem;
+  background: linear-gradient(45deg, #fff, #66a3ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px rgba(102, 163, 255, 0.4);
+  letter-spacing: -2px;
+  line-height: 1.2;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  white-space: nowrap;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main-title.fade-in {
+  opacity: 1;
+}
+
+.main-title.fade-out {
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  
+  .name-container {
+    height: 4rem;
+  }
+
+  .main-title {
+    font-size: 2rem;
+    margin-top: 5rem;
+  }
+} 

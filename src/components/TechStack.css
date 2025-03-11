@@ -1,0 +1,154 @@
+.tech-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.tech-stack {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.tech-item {
+  display: flex;
+  background-color: transparent;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tech-letter {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tech-item:nth-child(1) .tech-letter {
+  color: #4DB33D;
+}
+
+.tech-item:nth-child(2) .tech-letter {
+  color: #ffffff;
+}
+
+.tech-item:nth-child(3) .tech-letter {
+  color: #61DAFB;
+}
+
+.tech-item:nth-child(4) .tech-letter {
+  color: #83CD29;
+}
+
+.tech-item:hover .tech-letter {
+  transform: translateY(-5px);
+  text-shadow: 0 0 15px currentColor;
+}
+
+.tech-icon {
+  font-size: 3.5rem;
+  padding: 1.2rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+}
+
+.tech-icon:hover {
+  transform: translateY(-10px) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tech-icon.mongodb {
+  color: #4DB33D;
+  animation-delay: 0s;
+  border-color: #4DB33D;
+}
+
+.tech-icon.express {
+  color: #ffffff;
+  animation-delay: 0.25s;
+  border-color: #ffffff;
+}
+
+.tech-icon.react {
+  color: #61DAFB;
+  animation-delay: 0.5s;
+  animation: float 3s ease-in-out infinite, spin 20s linear infinite;
+  border-color: #61DAFB;
+}
+
+.tech-icon.node {
+  color: #83CD29;
+  animation-delay: 0.75s;
+  border-color: #83CD29;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-stack {
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 0 1rem;
+  }
+
+  .tech-item {
+    width: auto;
+  }
+
+  .tech-icon {
+    font-size: 2.5rem;
+    padding: 0.8rem;
+  }
+
+  .tech-letter {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-stack {
+    gap: 1rem;
+  }
+
+  .tech-icon {
+    font-size: 2rem;
+    padding: 0.6rem;
+  }
+
+  .tech-letter {
+    font-size: 1.6rem;
+  }
+} 

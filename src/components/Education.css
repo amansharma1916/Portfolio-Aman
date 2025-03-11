@@ -1,0 +1,357 @@
+.education-container {
+    /* display: flex;
+    align-items: center; */
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.education-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(45deg, #66a3ff, #89f7fe);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.education-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(45deg, #66a3ff, #89f7fe);
+}
+
+.education-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    position: absolute;
+    left: 28vw;
+    transform: translate(-50%, 15px);
+    width: calc(100% - 4rem);
+    animation: educationSlideOut 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    will-change: transform, opacity;
+}
+
+.education-card.fade-in {
+    animation: slideIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.degree-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.degree-icon {
+    font-size: 3rem;
+    color: #66a3ff;
+    animation: float 3s ease-in-out infinite;
+}
+
+.degree-info h2 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.degree-info h3 {
+    font-size: 1.4rem;
+    color: #66a3ff;
+}
+
+.institution-info {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.institution {
+    font-size: 1.2rem;
+    color: #e6e6e6;
+    margin-bottom: 0.5rem;
+}
+
+.duration, .current-status {
+    font-size: 1rem;
+    color: #b3b3b3;
+}
+
+.courses-section, .highlights-section {
+    margin-top: 2rem;
+}
+
+.courses-section h3, .highlights-section h3 {
+    font-size: 1.3rem;
+    color: #66a3ff;
+    margin-bottom: 1rem;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.course-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    min-height: 60px;
+}
+
+.course-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(102, 163, 255, 0.2);
+}
+
+.course-item svg {
+    font-size: 1.2rem;
+    color: #66a3ff;
+    min-width: 1.2rem;
+}
+
+.course-item span {
+    font-size: 0.9rem;
+    color: #e6e6e6;
+    line-height: 1.2;
+}
+
+.highlights-list {
+    list-style: none;
+    padding: 0;
+}
+
+.highlights-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+    color: #e6e6e6;
+}
+
+.highlights-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: #66a3ff;
+}
+
+.board {
+    font-size: 1rem;
+    color: #b3b3b3;
+    margin-bottom: 0.5rem;
+}
+
+.education-dots {
+    display: flex;
+    justify-content: center;
+    align-items: last baseline;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.education-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.education-dots .dot::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #66a3ff, #89f7fe);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.education-dots .dot.active {
+    background: linear-gradient(45deg, #66a3ff, #89f7fe);
+    transform: scale(1.2);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.education-dots .dot.active::after {
+    opacity: 0.3;
+    animation: pulse 2s ease-in-out infinite;
+}
+.education-dots{
+    margin-top: 22.5rem;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    40% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes educationSlideOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    60% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .education-container {
+        padding: 1.5rem 1rem;
+        width: 100vw;
+        height: auto;
+        min-height: 80vh;
+    }
+
+    .education-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .education-card {
+        padding: 0.8rem;
+        height: 100vh;
+        width: 92vw;
+        left: 0%;
+        transform: translateX(-50%);
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    .degree-header {
+        gap: 0.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .degree-icon {
+        font-size: 1.8rem;
+    }
+
+    .degree-info h2 {
+        font-size: 1.2rem;
+    }
+
+    .degree-info h3 {
+        font-size: 1rem;
+    }
+
+    .institution {
+        font-size: 0.9rem;
+    }
+
+    .duration, .current-status, .board {
+        font-size: 0.8rem;
+    }
+
+    .courses-section h3, .highlights-section h3 {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .course-item {
+        padding: 0.5rem;
+        min-height: 40px;
+    }
+
+    .course-item svg {
+        font-size: 0.9rem;
+    }
+
+    .course-item span {
+        font-size: 0.75rem;
+    }
+
+    .highlights-list li {
+        font-size: 0.8rem;
+        margin-bottom: 0.6rem;
+        padding-left: 1rem;
+        line-height: 1.4;
+    }
+
+    .education-dots {
+        margin-top: 0.8rem;
+    }
+
+    .education-content {
+        min-height: 350px;
+        margin: 0.8rem 0;
+    }
+}
+
+/* Add a wrapper for proper positioning */
+.education-content {
+    position: relative;
+    min-height: 600px;
+    margin: 2rem 0;
+} 
