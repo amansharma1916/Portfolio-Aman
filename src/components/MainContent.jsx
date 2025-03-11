@@ -57,7 +57,7 @@ const MainContent = () => {
         <TechStack />
       </div>
       <div className="title-container">
-        <h2 className="stack-title">Stac Developer</h2>
+        <h2 className="stack-title">Stack Developer</h2>
         <div className="buttons-container">
           <button 
             className={`about-button ${isMoving || isMobile ? 'visible' : ''}`}
