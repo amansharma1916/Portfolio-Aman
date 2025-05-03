@@ -24,6 +24,44 @@
   margin-top: 2rem;
 }
 
+/* MainContent.css */
+
+/* Profile Image Styling */
+.profile-image {
+  display: block;
+  width: 228px; /* Equivalent to Tailwind's w-32 */
+  height: 228px; /* Equivalent to Tailwind's h-32 */
+  border-radius: 50%; /* Circular image */
+  border: 2px solid white; /* White border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  margin: 0 auto 1.5rem auto; /* Center horizontally and add margin below */
+  animation: fadeIn 1s ease-in; /* Fade-in animation */
+}
+
+/* Mobile Styling */
+.profile-image-mobile {
+  width: 96px; /* Equivalent to Tailwind's w-24 */
+  height: 96px; /* Equivalent to Tailwind's h-24 */
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px); /* Slight upward movement */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional: Hover Effect */
+.profile-image:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  transition: transform 0.3s ease;
+}
+
 .about-button {
   position: relative;
   background: rgba(0, 102, 204, 0.2);

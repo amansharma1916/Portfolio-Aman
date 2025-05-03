@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AnimatedTitle from './AnimatedTitle';
 import TechStack from './TechStack';
 import './MainContent.css';
+import profileImage from '../assets/i.jpg';
 
 const MainContent = () => {
   const [isMoving, setIsMoving] = useState(false);
@@ -52,6 +53,12 @@ const MainContent = () => {
 
   return (
     <div className="left-section">
+      {/* Profile Image Above Title */}
+      <img
+        src={profileImage} // Replace with your image URL
+        alt="Profile picture of Aman Sharma"
+        className={`profile-image ${isMobile ? 'profile-image-mobile' : ''}`}
+      />
       <AnimatedTitle />
       <div className="tech-container">
         <TechStack />
@@ -77,6 +84,6 @@ const MainContent = () => {
       </div>
     </div>
   );
-}
+};
 
 export default MainContent;

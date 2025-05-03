@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Projects.css';
-import { FaPython, FaRobot, FaChartLine, FaHtml5, FaCss3Alt, FaBrain, FaUserCheck, FaCamera, FaGraduationCap, FaStore } from 'react-icons/fa';
+import { FaPython, FaRobot, FaChartLine, FaHtml5, FaCss3Alt, FaUserCheck, FaCamera, FaGraduationCap, FaStore, FaComments } from 'react-icons/fa';
 import { SiSelenium, SiMongodb, SiExpress, SiNodedotjs, SiOpenai, SiReact, SiOpencv, SiPandas, SiNumpy } from 'react-icons/si';
 import { DiJavascript } from 'react-icons/di';
 
@@ -9,6 +9,27 @@ const Projects = () => {
     const [isPaused, setIsPaused] = useState(false);
     const projects = [
         {
+            id: 7,
+            title: "Chatting Web App",
+            description: "A full-stack chatting application with user registration, admin approval, real-time chat, friend management, and admin user removal. Built with MERN stack and real-time communication.",
+            icon: <FaComments />,
+            techStack: [
+                { name: "MongoDB", icon: <SiMongodb /> },
+                { name: "Express.js", icon: <SiExpress /> },
+                { name: "React.js", icon: <SiReact /> },
+                { name: "Node.js", icon: <SiNodedotjs /> }
+            ],
+            features: [
+                "User registration and admin approval system",
+                "Real-time chat with friends",
+                "Friend management (add/remove friends)",
+                "Admin panel for user management",
+                "Secure and scalable architecture"
+            ],
+            link: "https://chat-it-app.vercel.app/",
+            isFeatured: true
+        },
+        {
             id: 1,
             title: "Jarvis AI with Voice Assistance",
             description: "A Python-based AI system designed to automate daily tasks through voice commands. Jarvis can perform web searches, control PC functions, and execute tasks like playing music or sending emails, making day-to-day activities more efficient.",
@@ -16,9 +37,6 @@ const Projects = () => {
             techStack: [
                 { name: "Python", icon: <FaPython /> },
                 { name: "OpenAI", icon: <SiOpenai /> },
-                // { name: "HTML", icon: <FaHtml5 /> },
-                // { name: "CSS", icon: <FaCss3Alt /> },
-                // { name: "JavaScript", icon: <DiJavascript /> },
                 { name: "SpeechRecognition", icon: <FaRobot /> },
                 { name: "Pyttsx3", icon: <FaRobot /> },
                 { name: "Selenium", icon: <SiSelenium /> }
@@ -30,26 +48,22 @@ const Projects = () => {
             ]
         },
         {
-            id: 2,
-            title: "Attendance Lookup",
-            description: "A system to help students and administrators manage attendance efficiently. Students can mark attendance by day or subject and track absences, while admins can add or remove users.",
-            icon: <FaUserCheck />,
+            id: 4,
+            title: "Face Recognition Attendance System",
+            description: "A Python-based system to automate attendance recording using facial recognition. Developed specifically for educational institutions, this system streamlines the process of marking attendance.",
+            icon: <FaCamera />,
             techStack: [
-                { name: "HTML", icon: <FaHtml5 /> },
-                { name: "CSS", icon: <FaCss3Alt /> },
-                { name: "JavaScript", icon: <DiJavascript /> },
-                { name: "React.js", icon: <SiReact /> },
-                { name: "Node.js", icon: <SiNodedotjs /> },
-                { name: "Express.js", icon: <SiExpress /> },
-                { name: "MongoDB", icon: <SiMongodb /> }
+                { name: "Python", icon: <FaPython /> },
+                { name: "OpenCV", icon: <SiOpencv /> },
+                { name: "NumPy", icon: <SiNumpy /> },
+                { name: "Pandas", icon: <SiPandas /> }
             ],
             features: [
-                "Secure login system for students and administrators",
-                "Interactive attendance tracking and analytics",
-                "Admin panel for managing users and data"
+                "Real-time facial recognition for attendance",
+                "Secure storage of attendance data in CSV format",
+                "Easy integration into existing school systems"
             ]
         },
-        
         {
             id: 3,
             title: "Expense Tracker",
@@ -70,20 +84,23 @@ const Projects = () => {
             ]
         },
         {
-            id: 4,
-            title: "Face Recognition Attendance System",
-            description: "A Python-based system to automate attendance recording using facial recognition. Developed specifically for educational institutions, this system streamlines the process of marking attendance.",
-            icon: <FaCamera />,
+            id: 2,
+            title: "Attendance Lookup",
+            description: "A system to help students and administrators manage attendance efficiently. Students can mark attendance by day or subject and track absences, while admins can add or remove users.",
+            icon: <FaUserCheck />,
             techStack: [
-                { name: "Python", icon: <FaPython /> },
-                { name: "OpenCV", icon: <SiOpencv /> },
-                { name: "NumPy", icon: <SiNumpy /> },
-                { name: "Pandas", icon: <SiPandas /> }
+                { name: "HTML", icon: <FaHtml5 /> },
+                { name: "CSS", icon: <FaCss3Alt /> },
+                { name: "JavaScript", icon: <DiJavascript /> },
+                { name: "React.js", icon: <SiReact /> },
+                { name: "Node.js", icon: <SiNodedotjs /> },
+                { name: "Express.js", icon: <SiExpress /> },
+                { name: "MongoDB", icon: <SiMongodb /> }
             ],
             features: [
-                "Real-time facial recognition for attendance",
-                "Secure storage of attendance data in CSV format",
-                "Easy integration into existing school systems"
+                "Secure login system for students and administrators",
+                "Interactive attendance tracking and analytics",
+                "Admin panel for managing users and data"
             ]
         },
         {
@@ -123,20 +140,18 @@ const Projects = () => {
         }
     ];
 
-    // Calculate how many sets of 2 projects we have
     const totalSets = Math.ceil(projects.length / 2);
 
     useEffect(() => {
         if (isPaused) return;
 
         const interval = setInterval(() => {
-            setCurrentSet((prev) => (prev + 1) % Math.ceil(projects.length / 2));
+            setCurrentSet((prev) => (prev + 1) % totalSets);
         }, 5000);
 
         return () => clearInterval(interval);
-    }, [projects.length, isPaused]);
+    }, [isPaused]);
 
-    // Get current projects to display
     const currentProjects = projects.slice(currentSet * 2, (currentSet * 2) + 2);
 
     const handleTechStackHover = (isEntering) => {
@@ -152,19 +167,26 @@ const Projects = () => {
                         key={project.id} 
                         className="project-card fade-in"
                     >
-                        <div className="project-icon">{project.icon}</div>
-                        <h2 className="project-title">{project.title}</h2>
+                        <div className="project-header">
+                            <div className="project-icon">{project.icon}</div>
+                            <h2 className="project-title">{project.title}</h2>
+                            {project.isFeatured && (
+                                <span className="featured-badge">Featured</span>
+                            )}
+                        </div>
                         <p className="project-description">{project.description}</p>
                         
                         <div className="tech-stack">
                             <h3>Tech Stack</h3>
                             <div className="tech-icons">
                                 {project.techStack.map((tech, i) => (
-                                    <div key={i} 
-                                         className="tech-item" 
-                                         title={tech.name}
-                                         onMouseEnter={() => handleTechStackHover(true)}
-                                         onMouseLeave={() => handleTechStackHover(false)}>
+                                    <div 
+                                        key={i} 
+                                        className="tech-item" 
+                                        title={tech.name}
+                                        onMouseEnter={() => handleTechStackHover(true)}
+                                        onMouseLeave={() => handleTechStackHover(false)}
+                                    >
                                         {tech.icon}
                                         <span className="tech-name">{tech.name}</span>
                                     </div>
@@ -180,6 +202,17 @@ const Projects = () => {
                                 ))}
                             </ul>
                         </div>
+
+                        {project.link && (
+                            <a 
+                                href={project.link} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="view-project-btn"
+                            >
+                                View Project
+                            </a>
+                        )}
                     </div>
                 ))}
             </div>
@@ -196,4 +229,4 @@ const Projects = () => {
     );
 };
 
-export default Projects; 
+export default Projects;

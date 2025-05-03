@@ -269,6 +269,37 @@
     }
 }
 
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.featured-badge {
+    background-color: #ffd700;
+    color: #333;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.view-project-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.view-project-btn:hover {
+    background-color: #0056b3;
+}
+
 /* Media Queries */
 @media (max-width: 1200px) {
     .projects-grid {
