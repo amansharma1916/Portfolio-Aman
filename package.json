@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "predeploy": "vite build",
     "deploy": "gh-pages -d dist",
-    "homepage": "http://amansharmaportfolio.me"
+    "homepage": "www.amansharmaportfolio.me"
   },
   "dependencies": {
     "react": "^19.0.0",
