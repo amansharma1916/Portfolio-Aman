@@ -12,11 +12,7 @@
 
 ## 📸 Preview
 
-> *(Replace these with your own screenshots)*
-
-![Homepage](https://via.placeholder.com/800x400.png?text=Homepage)
-![Projects](https://via.placeholder.com/800x400.png?text=Projects+Section)
-
+Link : amansharmaportfolio.me
 ---
 
 ## ✨ Features
