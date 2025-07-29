@@ -59,7 +59,7 @@ const Contact = () => {
                         <a href="https://www.linkedin.com/in/amansharmayt19" target="_blank" rel="noopener noreferrer">
                             <FaLinkedin />
                         </a>
-                        <a href="https://github.com/amansharmayt1908" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/amansharma1916" target="_blank" rel="noopener noreferrer">
                             <FaGithub />
                         </a>
                         <a href="https://www.instagram.com/dev.aman.sharma_19?igsh=MWtqeWxsemM0MnE3OQ==" target="_blank" rel="noopener noreferrer">
