@@ -18,7 +18,7 @@ const SocialLinks = () => {
       <a href="mailto:amansharmayt19@gmail.com">
         <MdEmail />
       </a>
-      <a href="https://github.com/amansharmayt1908" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/amansharma1916" target="_blank" rel="noopener noreferrer">
         <FaGithub />
       </a>
     </div>
