@@ -7,14 +7,17 @@ import { SiJavascript, SiMongodb, SiExpress, SiTailwindcss, SiNextdotjs, SiCplus
 const AboutSkills = () => {
     const skills = [
         { name: 'React.js', icon: <FaReact /> },
-        { name: 'Next.js', icon: <SiNextdotjs /> },
+        // { name: 'Next.js', icon: <SiNextdotjs /> },
+        { name: 'Python', icon: <FaPython /> },
         { name: 'Node.js', icon: <FaNodeJs /> },
         { name: 'Express.js', icon: <SiExpress /> },
+        
         { name: 'MongoDB', icon: <SiMongodb /> },
         { name: 'JavaScript', icon: <SiJavascript /> },
         { name: 'HTML', icon: <FaHtml5 /> },
         { name: 'CSS', icon: <FaCss3Alt /> },
-        { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
+        // { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
+        { name: 'GitHub', icon: <FaGithub /> },
         { name: 'C', icon: <SiC /> },
         { name: 'C++', icon: <SiCplusplus /> },
         { name: 'Java', icon: <FaJava /> }
